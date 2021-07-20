@@ -1,15 +1,3 @@
-data "aws_security_group" "default" {
-
-  filter {
-    name   = "group-name"
-    values = ["public"]
-  }
-
-  tags = {
-    Name   = "public"
-  }
-}
-
 resource "aws_security_group" "optional" {
   count = var.enable_sg ? 1 : 0
   name        = "allow-traffic-${var.name}"
