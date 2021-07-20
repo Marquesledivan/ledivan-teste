@@ -19,5 +19,7 @@ jobs:
         shell: bash
 
     steps:
+    - name: Terraform init
+      run: terraform init
     - name: Terraform Apply
       run: terraform apply -auto-approve
